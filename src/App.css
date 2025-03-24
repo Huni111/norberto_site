@@ -42,4 +42,33 @@ main {
     padding: 0.0rem;
     display: flex;
     justify-content: center;
+    flex-direction: column;
+
 }
+
+.premium_style {
+    padding: 1rem;
+    display: flex;
+}
+
+
+.premium_style>div>h1 {
+    margin: 1rem;
+}
+
+.premium_style>div>p {
+    column-count: 1; /* Number of columns like in a newspaper */
+    hyphens: auto; /* Automatically adds hyphens for better text breaking */
+    text-align: left; /* Justifies text for a cleaner appearance */
+    max-width: 40rem; /* Width adjusted for reading, can be changed as needed */
+    margin: 1rem;
+    font-size: x-large;
+    
+    
+
+}
+
+.quality-image {
+    max-width: 25rem;
+}
+

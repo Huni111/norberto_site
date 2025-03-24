@@ -114,3 +114,60 @@
       opacity: 1;
     }
   }
+  
+  /* Responsive Design for Mobile Devices */
+  @media (max-width: 768px) {
+    .hero-section {
+      height: 300px;
+    }
+
+    .slide-text {
+      left: 5%;
+      max-width: 90%;
+    }
+
+    .slide-text h1 {
+      font-size: 2.5rem;
+    }
+
+    .slide-text p {
+      font-size: 1.2rem;
+    }
+
+    .cta-button {
+      padding: 0.8rem 2rem;
+      font-size: 1rem;
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+      width: 36px;
+      height: 36px;
+      display: none; /* Hide arrow buttons on mobile */
+    }
+
+    .swiper-pagination-bullet {
+      width: 10px;
+      height: 10px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero-section {
+      height: 250px;
+    }
+
+    .slide-text h1 {
+      font-size: 2rem;
+    }
+
+    .slide-text p {
+      font-size: 1rem;
+      margin: 0.5rem 0 1.5rem;
+    }
+
+    .cta-button {
+      padding: 0.6rem 1.5rem;
+      font-size: 0.9rem;
+    }
+  }

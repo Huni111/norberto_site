@@ -9,7 +9,7 @@ const Header = () => {
 
 
               
-                <img className="logo" src="./image/Logo_Norberto_vector.png" alt="logo"></img>
+                <img className="logo" src="https://i.ibb.co/DPKY3zcQ/Logo-Norberto-vector.png" alt="logo"></img>
 
                 <nav>
                     <ul>

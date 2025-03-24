@@ -1,20 +1,24 @@
 {
-    "slides": [
-      {
-        "image": "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1920&q=80",
-        "heading": "Spring Collection 2024",
-        "subheading": "Discover the latest trends in fashion"
-      },
-      {
-        "image": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1920&q=80",
-        "heading": "Exclusive Deals",
-        "subheading": "Up to 50% off on selected items"
-      },
-      {
-        "image": "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1920&q=80",
-        "heading": "New Arrivals",
-        "subheading": "Be the first to shop our latest collection"
-      }
-    ]
-  }
-  
+  "slides": [
+    {
+      "image": "https://i.ibb.co/Z61zLpDw/Norberto-16.jpg",
+      "heading": "Colecția Norberto 2024",
+      "subheading": "Costume rafinate pentru bărbați eleganți"
+    },
+    {
+      "image": "https://i.ibb.co/0pYsK1KV/Norberto-10.jpg",
+      "heading": "Stil și Confort",
+      "subheading": "Alege un costum perfect croit pentru orice ocazie"
+    },
+    {
+      "image": "https://i.ibb.co/fVLMt9zv/Norberto-117.jpg",
+      "heading": "Exclusiv pentru Tine",
+      "subheading": "Personalizează-ți stilul cu modelele noastre premium"
+    },
+    {
+      "image": "https://i.ibb.co/Lz7RhBxp/Norberto-105.jpg",
+      "heading": "Reduceri de Sezon",
+      "subheading": "Profită de ofertele speciale la colecțiile actuale"
+    }
+  ]
+}
