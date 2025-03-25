@@ -41,6 +41,9 @@ const product = {
 
         <ProductCard
         image={product.images[0]}
+        title={product.name}
+        price={product.price}
+
         >
 
 
