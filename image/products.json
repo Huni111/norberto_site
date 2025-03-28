@@ -7,8 +7,8 @@
         "currency": "EUR",
         "description": "A timeless men's suit, perfect for any formal occasion.",
         "images": [
-          "https://example.com/images/suit1-front.jpg",
-          "https://example.com/images/suit1-back.jpg"
+          "https://i.ibb.co/wr4xNNhT/Depositphotos-143285355-L.jpg",
+          "https://i.ibb.co/RJF6bXV/Depositphotos-35161177-L.jpg"
         ],
         "stock": 10,
         "category": "Suits",
@@ -22,8 +22,8 @@
         "currency": "EUR",
         "description": "Warm and stylish winter coat for men.",
         "images": [
-          "https://example.com/images/coat1-front.jpg",
-          "https://example.com/images/coat1-back.jpg"
+          "https://i.ibb.co/wr4xNNhT/Depositphotos-143285355-L.jpg",
+          "https://i.ibb.co/RJF6bXV/Depositphotos-35161177-L.jpg"
         ],
         "stock": 5,
         "category": "Coats",
@@ -37,8 +37,8 @@
         "currency": "EUR",
         "description": "A perfect blend of casual and formal for modern men.",
         "images": [
-          "https://example.com/images/blazer1-front.jpg",
-          "https://example.com/images/blazer1-back.jpg"
+          "https://i.ibb.co/wr4xNNhT/Depositphotos-143285355-L.jpg",
+          "https://i.ibb.co/RJF6bXV/Depositphotos-35161177-L.jpg"
         ],
         "stock": 20,
         "category": "Blazers",
@@ -52,8 +52,8 @@
         "currency": "EUR",
         "description": "Premium quality leather jacket for a rugged look.",
         "images": [
-            "https://example.com/images/jacket1-front.jpg",
-            "https://example.com/images/jacket1-back.jpg"
+            "https://i.ibb.co/wr4xNNhT/Depositphotos-143285355-L.jpg",
+            "https://i.ibb.co/RJF6bXV/Depositphotos-35161177-L.jpg"
         ],
         "stock": 8,
         "category": "Jackets",
@@ -67,8 +67,8 @@
         "currency": "EUR",
         "description": "Elegant formal shirt for office and events.",
         "images": [
-            "https://example.com/images/shirt1-front.jpg",
-            "https://example.com/images/shirt1-back.jpg"
+            "https://i.ibb.co/wr4xNNhT/Depositphotos-143285355-L.jpg",
+            "https://i.ibb.co/RJF6bXV/Depositphotos-35161177-L.jpg"
         ],
         "stock": 15,
         "category": "Shirts",
@@ -82,8 +82,8 @@
         "currency": "EUR",
         "description": "Comfortable and stylish slim fit jeans.",
         "images": [
-            "https://example.com/images/jeans1-front.jpg",
-            "https://example.com/images/jeans1-back.jpg"
+            "https://i.ibb.co/wr4xNNhT/Depositphotos-143285355-L.jpg",
+            "https://i.ibb.co/RJF6bXV/Depositphotos-35161177-L.jpg"
         ],
         "stock": 25,
         "category": "Jeans",

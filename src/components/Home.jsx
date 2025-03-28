@@ -1,24 +1,13 @@
-import React from "react";
+import React, {useEffect} from "react";
 import HeroSection from './Hero'
-import ProductCard from "./ProductCard";
+import Products from '../../image/products.json'
+import ProductCarousel from "./ProductCarousel";
 
 const Home = () => {
 
-const product = {
-    "id": 1,
-    "name": "Men's Classic Suit",
-    "price": 499.99,
-    "currency": "EUR",
-    "description": "A timeless men's suit, perfect for any formal occasion.",
-    "images": [
-      "https://example.com/images/suit1-front.jpg",
-      "https://example.com/images/suit1-back.jpg"
-    ],
-    "stock": 10,
-    "category": "Suits",
-    "discount": 10,
-    "rating": 4.5
-  }
+
+  const product = Products.products;
+
 
 
     return (
@@ -39,15 +28,16 @@ const product = {
 
             </div>
 
-        <ProductCard
-        image={product.images[0]}
-        title={product.name}
-        price={product.price}
-
-        >
 
 
-        </ProductCard>
+
+
+<ProductCarousel />
+
+
+
+
+       
             
 
         </>
