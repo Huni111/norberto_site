@@ -73,22 +73,21 @@
   
   /* Swiper Navigation Styles */
   :root {
-    --swiper-navigation-size: 44px;
-    --swiper-theme-color: #ffffff;
+    --swiper-navigation-size: 50px !important;
+    --swiper-theme-color: #adaaaa !important;
   }
   
   .swiper-button-prev,
   .swiper-button-next {
     width: var(--swiper-navigation-size);
     height: var(--swiper-navigation-size);
-    background: rgba(0, 0, 0, 0.0);
     border-radius: 50%;
     transition: all 0.3s ease;
   }
   
   .swiper-button-prev:hover,
   .swiper-button-next:hover {
-    background: rgba(0, 0, 0, 0.8);
+    --swiper-theme-color: #ffffff !important;
   }
   
   /* Swiper Pagination Styles */
@@ -171,3 +170,5 @@
       font-size: 0.9rem;
     }
   }
+
+
