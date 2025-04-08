@@ -7,8 +7,9 @@
   border-radius: 8px;
   padding: 16px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  width: 250px;
+  width: 280px; /* Increased from 250px */
   transition: box-shadow 0.3s;
+  margin: 0 auto;
 }
 
 .product-card:hover {
@@ -48,4 +49,111 @@
 
 .add-to-cart-button:hover {
   background-color: #0056b3;
+}
+
+/* New styles for carousel centering and spacing */
+.carousel-container {
+  width: 100%;
+  max-width: 1600px; /* Increased from 1200px */
+  margin: 40px auto;
+  padding: 0 10px; /* Reduced padding to maximize width */
+  position: relative;
+}
+
+.carousel-title {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 28px;
+  color: #333;
+}
+
+.product-carousel {
+  position: relative;
+  padding: 0 20px; /* Reduced from 40px to maximize width */
+  width: 95%; /* Use most of the available width */
+  margin: 0 auto;
+}
+
+.product-swiper {
+  width: 100%;
+  padding-bottom: 50px; /* Space for pagination */
+}
+
+.carusel-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+/* Style the navigation buttons */
+.product-carousel .swiper-button-next,
+.product-carousel .swiper-button-prev {
+  color: #333;
+  background-color: rgba(255, 255, 255, 0.8);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.product-carousel .swiper-button-next:after,
+.product-carousel .swiper-button-prev:after {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.product-carousel .swiper-button-next {
+  right: -5px; /* Moved closer to edge */
+}
+
+.product-carousel .swiper-button-prev {
+  left: -5px; /* Moved closer to edge */
+}
+
+/* Style the pagination bullets */
+.product-carousel .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+}
+
+.product-carousel .swiper-pagination-bullet-active {
+  background-color: #333;
+}
+
+/* Price styling */
+.price-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.original-price {
+  text-decoration: line-through;
+  color: #999;
+  font-size: 14px;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  color: #f8d32a;
+  font-size: 18px;
+}
+
+.rating-value {
+  color: #666;
+  font-size: 14px;
+  margin-left: 5px;
+}
+
+.discount-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #e53935;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-weight: bold;
 }
