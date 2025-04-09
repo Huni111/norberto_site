@@ -1,0 +1,127 @@
+/* Footer Styles */
+.footer {
+  background-color: #1a1a1a;
+  color: #f5f5f5;
+  padding: 3rem 0 1rem 0;
+  font-family: 'Arial', sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 250px;
+  margin-bottom: 2rem;
+  padding-right: 1.5rem;
+}
+
+.footer-section h3 {
+  color: #f8f8f8;
+  font-size: 1.2rem;
+  margin-bottom: 1.2rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.footer-section h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 2px;
+  background-color: #d32f2f; /* Changed to reddish color */
+}
+
+.footer-section p {
+  color: #b3b3b3;
+  line-height: 1.6;
+}
+
+/* Contact List Styles */
+.contact-list {
+  list-style: none;
+  padding: 0;
+}
+
+.contact-list li {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  color: #b3b3b3;
+}
+
+.contact-icon {
+  margin-right: 0.8rem;
+  color: #d32f2f; /* Changed to reddish color */
+  font-size: 1.1rem;
+  margin-top: 0.2rem;
+}
+
+/* Quick Links Styles */
+.quick-links {
+  list-style: none;
+  padding: 0;
+}
+
+.quick-links li {
+  margin-bottom: 0.8rem;
+}
+
+.quick-links a {
+  color: #b3b3b3;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.quick-links a:hover {
+  color: #d32f2f; /* Changed to reddish color */
+}
+
+/* Social Icons Styles */
+.social-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-icon {
+  color: #b3b3b3;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+  color: #d32f2f; /* Changed to reddish color */
+}
+
+/* Footer Bottom Styles */
+.footer-bottom {
+  text-align: center;
+  padding-top: 2rem;
+  margin-top: 1rem;
+  border-top: 1px solid #333;
+}
+
+.footer-bottom p {
+  color: #888;
+  font-size: 0.9rem;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+  }
+  
+  .footer-section {
+    margin-bottom: 2rem;
+    padding-right: 0;
+  }
+}

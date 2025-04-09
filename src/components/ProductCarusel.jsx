@@ -11,7 +11,14 @@ import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 
 // ProductCard subcomponent
-const ProductCard = ({ image, title, price, currency, discount, rating }) => {
+const ProductCard = ({ 
+  image, 
+  title, 
+  price, 
+  currency = "lei", 
+  discount = 0, 
+  rating = 0 
+}) => {
   const discountedPrice = discount ? price * (1 - discount / 100) : price;
   
   return (
@@ -98,12 +105,6 @@ ProductCard.propTypes = {
   currency: PropTypes.string,
   discount: PropTypes.number,
   rating: PropTypes.number
-};
-
-ProductCard.defaultProps = {
-  currency: "lei",
-  discount: 0,
-  rating: 0
 };
 
 ProductCarousel.propTypes = {

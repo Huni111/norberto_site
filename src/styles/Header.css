@@ -1,0 +1,147 @@
+/* Header styling with no gap before hero section */
+.header {
+  background-color: #1a1a1a;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  position: relative;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Large logo on the left */
+.logo-container {
+  flex: 0 0 auto;
+  padding: 0;
+  margin: 0;
+}
+
+.logo {
+  height: 10rem; /* Exactly 10rem as requested */
+  width: auto;
+  display: block;
+  padding: 5px 0; /* Minimal padding */
+  margin: 0;
+}
+
+/* Navigation menu on the right */
+.main-nav {
+  margin-left: auto; /* Push to the right */
+  height: 60px; /* Fixed height for navbar */
+  display: flex;
+  align-items: center;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.main-nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.main-nav li {
+  margin-left: 25px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.main-nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  transition: color 0.2s;
+  display: block;
+  padding: 0;
+}
+
+.main-nav a:hover {
+  color: #d32f2f;
+}
+
+/* Mobile toggle button - hidden on desktop */
+.menu-toggle {
+  display: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  margin-left: auto; /* Push to right on mobile */
+}
+
+/* Mobile responsiveness */
+@media (max-width: 992px) {
+  .logo {
+    height: 8rem; /* Slightly smaller on tablets */
+  }
+  
+  .main-nav li {
+    margin-left: 15px;
+  }
+  
+  .main-nav a {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Show toggle button on mobile */
+  .menu-toggle {
+    display: block;
+    z-index: 20;
+  }
+  
+  .logo {
+    height: 7rem;
+  }
+  
+  /* Move navigation to slide-in panel */
+  .main-nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    max-width: 300px;
+    height: 100vh;
+    background-color: #1a1a1a;
+    padding-top: 70px;
+    transition: right 0.3s ease;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+    margin-left: 0;
+  }
+  
+  /* Show navigation when menu is open */
+  .main-nav.menu-open {
+    right: 0;
+  }
+  
+  .main-nav ul {
+    flex-direction: column;
+    padding: 0 20px;
+  }
+  
+  .main-nav li {
+    margin: 12px 0;
+    width: 100%;
+    border-bottom: 1px solid #333;
+    padding-bottom: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    height: 6rem; /* Smaller on phones but still substantial */
+  }
+  
+  .header-container {
+    padding: 0 15px;
+  }
+}

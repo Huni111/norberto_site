@@ -1,0 +1,26 @@
+/* Root layout styling */
+.site-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header section - full width with dark background */
+.header-section {
+  background-color: #1a1a1a;
+  width: 100%;
+  color: #f5f5f5;
+}
+
+/* Main content */
+main {
+  flex: 1;
+  background-color: #ffffff;
+}
+
+/* Footer container */
+footer {
+  background-color: #1a1a1a;
+  color: #f5f5f5;
+  width: 100%;
+}

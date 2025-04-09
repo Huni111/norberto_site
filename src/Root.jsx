@@ -1,20 +1,23 @@
 import React from "react";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 import { Outlet } from "react-router-dom";
+import "./styles/Root.css";
 
 
 const RootFile = () => {
 
     return (
-        <div>
-            <header>
+        <div className="site-container">
+            <div className="header-section">
                 <Header />
-            </header>
+            </div>
             <main>
                 <Outlet />
             </main>
-
-
+            <footer>
+                <Footer />
+            </footer>
         </div>
     )
 }
