@@ -1,0 +1,33 @@
+/* Prevent horizontal scrolling across the entire site */
+html, body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Ensure all direct children of the body stay within bounds */
+body > * {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Fix potential issues with absolute/fixed positioned elements */
+.header, .header-container, .logo-container, .main-nav {
+  max-width: 100vw;
+  box-sizing: border-box;
+}
+
+/* Ensure images don't cause overflow */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Handle overflow in containers */
+.container, .row, section, main, div {
+  max-width: 100%;
+  box-sizing: border-box;
+}

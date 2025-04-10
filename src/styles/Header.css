@@ -4,10 +4,13 @@
   width: 100%;
   margin: 0;
   padding: 0;
+  position: relative;
+  z-index: 10; /* Ensure header is above hero section */
 }
 
 .header-container {
   display: flex;
+  justify-content: space-between; /* Ensures space between logo and nav */
   align-items: center;
   padding: 0 20px;
   position: relative;
@@ -17,27 +20,35 @@
 
 /* Large logo on the left */
 .logo-container {
+  position: relative;
+  z-index: 20; /* Higher than both header and hero */
   flex: 0 0 auto;
   padding: 0;
   margin: 0;
+  display: flex;
+  justify-content: flex-start; /* Explicitly align logo to the left */
+  left: 0;
 }
 
 .logo {
   height: 10rem; /* Exactly 10rem as requested */
   width: auto;
   display: block;
-  padding: 5px 0; /* Minimal padding */
+  position: relative;
+  top: 1rem; /* Push down to create overlap effect */
+  padding: 0; /* Remove padding */
   margin: 0;
 }
 
 /* Navigation menu on the right */
 .main-nav {
-  margin-left: auto; /* Push to the right */
+  flex: 0 0 auto; /* Don't allow nav to grow or shrink */
   height: 60px; /* Fixed height for navbar */
   display: flex;
   align-items: center;
-  margin-top: 0;
-  margin-bottom: 0;
+  justify-content: flex-end; /* Explicitly align nav to the right */
+  margin: 0;
+  margin-left: auto; /* Push to the right */
 }
 
 .main-nav ul {
@@ -45,6 +56,7 @@
   list-style: none;
   margin: 0;
   padding: 0;
+  justify-content: flex-end; /* Align items to the right */
 }
 
 .main-nav li {
@@ -58,7 +70,7 @@
   text-decoration: none;
   font-size: 16px;
   font-weight: 500;
-  transition: color 0.2s;
+  transition: color 0.3s ease;
   display: block;
   padding: 0;
 }
@@ -100,6 +112,7 @@
   
   .logo {
     height: 7rem;
+    top: 0.5rem;
   }
   
   /* Move navigation to slide-in panel */
@@ -139,6 +152,7 @@
 @media (max-width: 480px) {
   .logo {
     height: 6rem; /* Smaller on phones but still substantial */
+    top: 0.25rem;
   }
   
   .header-container {

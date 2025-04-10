@@ -1,6 +1,8 @@
 import React, { Suspense } from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './App.css';
+import './styles/global.css'; // Fixed import path
+
 
 // components:
 import RootFile from './Root';
