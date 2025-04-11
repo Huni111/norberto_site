@@ -1,0 +1,187 @@
+/* Company Registration Form styles - isolated from header/navbar styles */
+.company-registration-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.company-registration-container h1 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+.registration-intro {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #666;
+  line-height: 1.5;
+}
+
+.company-registration-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.form-section {
+  border: 1px solid #eaeaea;
+  border-radius: 8px;
+  padding: 1.5rem;
+  background-color: #fafafa;
+}
+
+.form-section h2 {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  font-size: 1.25rem;
+  color: #333;
+  border-bottom: 1px solid #eaeaea;
+  padding-bottom: 0.75rem;
+}
+
+/* Form controls with very specific class names to avoid style conflicts */
+.company-registration-form .form-group {
+  margin-bottom: 1.25rem;
+}
+
+.company-registration-form .form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #444;
+}
+
+.company-registration-form .form-group input[type="text"],
+.company-registration-form .form-group input[type="email"],
+.company-registration-form .form-group input[type="tel"],
+.company-registration-form .form-group textarea,
+.company-registration-form .form-group select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: border-color 0.2s;
+}
+
+.company-registration-form .form-group input[type="text"]:focus,
+.company-registration-form .form-group input[type="email"]:focus,
+.company-registration-form .form-group input[type="tel"]:focus,
+.company-registration-form .form-group textarea:focus,
+.company-registration-form .form-group select:focus {
+  border-color: #666;
+  outline: none;
+}
+
+.company-registration-form .form-group textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.company-registration-form .form-group input.error,
+.company-registration-form .form-group textarea.error,
+.company-registration-form .form-group select.error {
+  border-color: #dc3545;
+}
+
+.company-registration-form .error-message {
+  color: #dc3545;
+  font-size: 0.875rem;
+  margin-top: 0.35rem;
+}
+
+.company-registration-form .form-error {
+  background-color: #fff5f5;
+  padding: 0.75rem;
+  border-radius: 4px;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.company-registration-form small {
+  display: block;
+  color: #777;
+  font-size: 0.8rem;
+  margin-top: 0.25rem;
+}
+
+.company-registration-form .checkbox-group {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.company-registration-form .checkbox-group input[type="checkbox"] {
+  margin-top: 0.25rem;
+}
+
+.company-registration-form .checkbox-group label {
+  margin-bottom: 0;
+  line-height: 1.4;
+}
+
+.company-registration-form .radio-group {
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.company-registration-form .radio-group label {
+  margin-bottom: 0;
+}
+
+.company-registration-form .collaboration-options {
+  padding: 0.5rem 0;
+}
+
+.company-registration-form .terms-section a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.company-registration-form .terms-section a:hover {
+  text-decoration: underline;
+}
+
+.company-registration-form .form-actions {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.company-registration-form .submit-button {
+  background-color: #0066cc;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 0.85rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.company-registration-form .submit-button:hover {
+  background-color: #0055aa;
+}
+
+.company-registration-form .submit-button:disabled {
+  background-color: #89b9e4;
+  cursor: not-allowed;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .company-registration-container {
+    padding: 1.5rem;
+    margin: 1rem;
+  }
+  
+  .form-section {
+    padding: 1rem;
+  }
+}
