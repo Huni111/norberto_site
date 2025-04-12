@@ -18,6 +18,10 @@ const CompanyRegistrationForm = () => {
     phoneNumber: "",
     email: "",
     
+    // Account credentials
+    password: "",
+    confirmPassword: "",
+    
     // Billing information
     iban: "",
     bank: "",
@@ -66,6 +70,13 @@ const CompanyRegistrationForm = () => {
     if (!formData.phoneNumber) newErrors.phoneNumber = "Numărul de telefon este obligatoriu";
     if (!formData.email) newErrors.email = "Email-ul este obligatoriu";
     else if (!/\S+@\S+\.\S+/.test(formData.email)) newErrors.email = "Adresa de email este invalidă";
+    
+    // Validate password fields
+    if (!formData.password) newErrors.password = "Parola este obligatorie";
+    else if (formData.password.length < 8) newErrors.password = "Parola trebuie să conțină cel puțin 8 caractere";
+    
+    if (!formData.confirmPassword) newErrors.confirmPassword = "Confirmarea parolei este obligatorie";
+    else if (formData.password !== formData.confirmPassword) newErrors.confirmPassword = "Parolele nu coincid";
     
     if (!formData.collaborationType) newErrors.collaborationType = "Selectați tipul de colaborare";
     if (formData.collaborationType === "other" && !formData.otherCollaborationDetails) {
@@ -235,6 +246,37 @@ const CompanyRegistrationForm = () => {
               className={errors.email ? "error" : ""}
             />
             {errors.email && <div className="error-message">{errors.email}</div>}
+          </div>
+        </section>
+        
+        <section className="form-section">
+          <h2>Date autentificare cont</h2>
+          
+          <div className="form-group">
+            <label htmlFor="password">Parolă *</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              value={formData.password}
+              onChange={handleChange}
+              className={errors.password ? "error" : ""}
+            />
+            {errors.password && <div className="error-message">{errors.password}</div>}
+            <small>Parola trebuie să conțină minim 8 caractere</small>
+          </div>
+          
+          <div className="form-group">
+            <label htmlFor="confirmPassword">Confirmare parolă *</label>
+            <input
+              type="password"
+              id="confirmPassword"
+              name="confirmPassword"
+              value={formData.confirmPassword}
+              onChange={handleChange}
+              className={errors.confirmPassword ? "error" : ""}
+            />
+            {errors.confirmPassword && <div className="error-message">{errors.confirmPassword}</div>}
           </div>
         </section>
         
