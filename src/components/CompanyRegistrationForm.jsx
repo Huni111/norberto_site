@@ -40,6 +40,10 @@ const CompanyRegistrationForm = () => {
     gdprAccepted: false
   });
   
+  // State for password visibility
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   
@@ -57,6 +61,16 @@ const CompanyRegistrationForm = () => {
         [name]: null
       });
     }
+  };
+  
+  // Toggle password visibility
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
+  
+  // Toggle confirm password visibility
+  const toggleConfirmPasswordVisibility = () => {
+    setShowConfirmPassword(!showConfirmPassword);
   };
   
   const validateForm = () => {
@@ -254,28 +268,48 @@ const CompanyRegistrationForm = () => {
           
           <div className="form-group">
             <label htmlFor="password">Parolă *</label>
-            <input
-              type="password"
-              id="password"
-              name="password"
-              value={formData.password}
-              onChange={handleChange}
-              className={errors.password ? "error" : ""}
-            />
+            <div className="password-input-container">
+              <input
+                type={showPassword ? "text" : "password"}
+                id="password"
+                name="password"
+                value={formData.password}
+                onChange={handleChange}
+                className={errors.password ? "error" : ""}
+              />
+              <button 
+                type="button" 
+                className="toggle-password-button" 
+                onClick={togglePasswordVisibility}
+                aria-label={showPassword ? "Ascunde parola" : "Afișează parola"}
+              >
+                {showPassword ? "Ascunde" : "Afișează"}
+              </button>
+            </div>
             {errors.password && <div className="error-message">{errors.password}</div>}
             <small>Parola trebuie să conțină minim 8 caractere</small>
           </div>
           
           <div className="form-group">
             <label htmlFor="confirmPassword">Confirmare parolă *</label>
-            <input
-              type="password"
-              id="confirmPassword"
-              name="confirmPassword"
-              value={formData.confirmPassword}
-              onChange={handleChange}
-              className={errors.confirmPassword ? "error" : ""}
-            />
+            <div className="password-input-container">
+              <input
+                type={showConfirmPassword ? "text" : "password"}
+                id="confirmPassword"
+                name="confirmPassword"
+                value={formData.confirmPassword}
+                onChange={handleChange}
+                className={errors.confirmPassword ? "error" : ""}
+              />
+              <button 
+                type="button" 
+                className="toggle-password-button" 
+                onClick={toggleConfirmPasswordVisibility}
+                aria-label={showConfirmPassword ? "Ascunde parola" : "Afișează parola"}
+              >
+                {showConfirmPassword ? "Ascunde" : "Afișează"}
+              </button>
+            </div>
             {errors.confirmPassword && <div className="error-message">{errors.confirmPassword}</div>}
           </div>
         </section>
