@@ -1,7 +1,7 @@
 import React, { Suspense } from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './App.css';
-import './styles/global.css'; // Fixed import path
+import './styles/global.css'
 
 
 // components:
@@ -14,6 +14,8 @@ const Produse = lazy(() => import('./components/Produse'))
 const Servicii = lazy(() => import('./components/Servicii'))
 const Cont = lazy(() => import('./components/Cont'))
 const Contact = lazy(() => import('./components/Contact'))
+const CompanyRegistrationForm = lazy(() => import('./components/CompanyRegistrationForm'))
+
 
 
 const router = createBrowserRouter([
@@ -21,13 +23,45 @@ const router = createBrowserRouter([
         path: '/',
         element: <RootFile />,
         children: [
-            { path: '/', element: <Home /> },
-            { path: 'about', element: <Despre /> },
-            { path: 'products', element: <Produse /> },
-            { path: 'services', element: <Servicii /> },
-            { path: 'acount', element: <Cont /> },
-            { path: 'contact', element: <Contact /> },
-
+            { path: '/', element: 
+                <Suspense fallback={<div>Loading...</div>}>
+                    <Home />
+                </Suspense> 
+            },
+            { path: 'about', element: 
+                <Suspense fallback={<div>Loading...</div>}>
+                    <Despre />
+                </Suspense> 
+            },
+            { path: 'products', element: 
+                <Suspense fallback={<div>Loading...</div>}>
+                    <Produse />
+                </Suspense> 
+            },
+            { path: 'services', element: 
+                <Suspense fallback={<div>Loading...</div>}>
+                    <Servicii />
+                </Suspense> 
+            },
+            { path: 'acount', element: 
+                <Suspense fallback={<div>Loading...</div>}>
+                    <Cont />
+                </Suspense> 
+            },
+            { path: 'contact', element: 
+                <Suspense fallback={<div>Loading...</div>}>
+                    <Contact />
+                </Suspense> 
+            },
+            { path: '/register-company', element: 
+                <Suspense fallback={<div>Loading...</div>}>
+                    <CompanyRegistrationForm />
+                </Suspense> 
+            },
+            { 
+                path: '*', 
+                element: <div className="not-found">Pagina nu a fost găsită</div> 
+            }
         ]
     }
 ])

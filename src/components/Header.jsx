@@ -33,6 +33,7 @@ const Header = () => {
                         <li><Link to="/contact" onClick={() => setMenuOpen(false)}>Contact</Link></li>
                         <li><Link to="/acount" onClick={() => setMenuOpen(false)}>Contul meu</Link></li>
                         <li><Link to="/login" onClick={() => setMenuOpen(false)}>Inra in cont</Link></li>
+                        <li><Link to="/register-company" onClick={() => setMenuOpen(false)}>Creaza-ti cont</Link></li>
                     </ul>
                 </nav>
             </div>
