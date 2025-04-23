@@ -1,0 +1,262 @@
+/* Products page layout */
+.products-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.products-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.products-header h1 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.products-header p {
+  color: #666;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Filters section */
+.products-filters {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 25px;
+  padding: 15px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  gap: 15px;
+}
+
+.filter-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.filter-group label {
+  font-weight: 500;
+  color: #495057;
+}
+
+.filter-group select {
+  padding: 8px 12px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  background-color: white;
+  min-width: 180px;
+}
+
+/* Products grid */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.product-grid-item {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Loading and error states */
+.loading-indicator {
+  text-align: center;
+  padding: 40px;
+  color: #666;
+  font-size: 1.1rem;
+}
+
+.error-message {
+  text-align: center;
+  padding: 30px;
+  color: #dc3545;
+  background-color: #f8d7da;
+  border-radius: 8px;
+  margin: 20px 0;
+}
+
+.no-products-message {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 40px;
+  color: #666;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+}
+
+/* Product Card Styles */
+.product-card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.product-image {
+  height: 200px;
+  position: relative;
+  overflow: hidden;
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.product-card:hover .product-image img {
+  transform: scale(1.05);
+}
+
+.discount-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #e74c3c;
+  color: white;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+}
+
+.product-info {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.product-info h3 {
+  font-size: 1.1rem;
+  margin-top: 0;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.product-category {
+  color: #6c757d;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+  text-transform: capitalize;
+}
+
+.product-price {
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.original-price {
+  color: #999;
+  text-decoration: line-through;
+  font-size: 0.9rem;
+}
+
+.discounted-price {
+  color: #e74c3c;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.add-to-cart-btn {
+  margin-top: auto;
+  padding: 10px 15px;
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.add-to-cart-btn:hover {
+  background-color: #3a7ac8;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .products-filters {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .filter-group {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .filter-group select {
+    width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .products-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .products-header h1 {
+    font-size: 1.5rem;
+  }
+  
+  .product-image {
+    height: 180px;
+  }
+}
+
+/* Increased Card Height for Produse Page */
+.products-page .product-card {
+  min-height: 500px; /* Taller product cards */
+}
+
+.products-page .product-image {
+  height: 250px; /* Increased image height from default 200px */
+}
+
+.products-page .product-info {
+  display: flex;
+  flex-direction: column;
+  height: calc(100% - 250px); /* Ensures the info section fills the remaining card space */
+}
+
+.products-page .product-description {
+  flex-grow: 1;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 4; /* Show up to 4 lines of text */
+  -webkit-box-orient: vertical;
+  margin-bottom: 15px;
+}
+
+.products-page .add-to-cart-btn {
+  margin-top: auto; /* Pushes the button to the bottom */
+}

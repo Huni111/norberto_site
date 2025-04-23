@@ -10,37 +10,70 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 
-// ProductCard subcomponent
-const ProductCard = ({ 
-  image, 
-  title, 
-  price, 
-  currency = "lei", 
-  discount = 0, 
-  rating = 0 
-}) => {
-  const discountedPrice = discount ? price * (1 - discount / 100) : price;
+// ProductCard subcomponent - updated to match Produse page design
+const ProductCard = ({ product }) => {
+  const { name, price, currency = "lei", images, discount = 0, rating = 0, description, category } = product;
   
+  // Calculate discounted price
+  const discountedPrice = discount ? price - (price * discount / 100) : price;
+  
+  // Generate star rating
+  const renderStars = (rating) => {
+    const fullStars = Math.floor(rating);
+    const hasHalfStar = rating % 1 >= 0.5;
+    const stars = [];
+    
+    // Add full stars
+    for (let i = 0; i < fullStars; i++) {
+      stars.push(<span key={`full-${i}`} className="star full">★</span>);
+    }
+    
+    // Add half star if needed
+    if (hasHalfStar) {
+      stars.push(<span key="half" className="star half">★</span>);
+    }
+    
+    // Add empty stars
+    const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
+    for (let i = 0; i < emptyStars; i++) {
+      stars.push(<span key={`empty-${i}`} className="star empty">☆</span>);
+    }
+    
+    return <div className="product-rating">{stars}</div>;
+  };
+
   return (
     <div className='carusel-wrapper'>
       <div className="product-card">
-        <img src={image} alt={title} className="product-image" />
-        {discount > 0 && (
-          <div className="discount-badge">-{discount}%</div>
-        )}
+        <div className="product-image">
+          <img src={images[0]} alt={name} />
+          {discount > 0 && (
+            <span className="discount-badge">-{discount}%</span>
+          )}
+        </div>
         <div className="product-info">
-          <h3 className="product-title">{title}</h3>
-          <div className="price-container">
-            {discount > 0 && (
-              <span className="original-price">{price.toFixed(2)} {currency}</span>
+          <h3>{name}</h3>
+          {category && <div className="product-category">{category}</div>}
+          
+          {/* Star rating */}
+          {renderStars(rating)}
+          
+          <div className="product-price">
+            {discount > 0 ? (
+              <>
+                <span className="original-price">{price.toFixed(2)} {currency}</span>
+                <span className="discounted-price">
+                  {discountedPrice.toFixed(2)} {currency}
+                </span>
+              </>
+            ) : (
+              <span>{price.toFixed(2)} {currency}</span>
             )}
-            <p className="product-price">{discountedPrice.toFixed(2)} {currency}</p>
           </div>
-          <div className="rating">
-            {'★'.repeat(Math.floor(rating))}
-            {'☆'.repeat(5 - Math.floor(rating))}
-            <span className="rating-value">({rating})</span>
-          </div>
+          {description && (
+            <p className="product-description">{description}</p>
+          )}
+          <button className="add-to-cart-btn">Adaugă în coș</button>
         </div>
       </div>
     </div>
@@ -82,14 +115,7 @@ const ProductCarousel = ({ products }) => {
       >
         {products.map((product) => (
           <SwiperSlide key={product.id}>
-            <ProductCard
-              title={product.name}
-              image={product.images[0]}
-              price={product.price}
-              currency="lei"
-              discount={product.discount}
-              rating={product.rating}
-            />
+            <ProductCard product={product} />
           </SwiperSlide>
         ))}
         </Swiper>
@@ -99,12 +125,17 @@ const ProductCarousel = ({ products }) => {
 };
 
 ProductCard.propTypes = {
-  image: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-  price: PropTypes.number.isRequired,
-  currency: PropTypes.string,
-  discount: PropTypes.number,
-  rating: PropTypes.number
+  product: PropTypes.shape({
+    id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    name: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired,
+    currency: PropTypes.string,
+    images: PropTypes.arrayOf(PropTypes.string).isRequired,
+    discount: PropTypes.number,
+    rating: PropTypes.number,
+    description: PropTypes.string,
+    category: PropTypes.string
+  }).isRequired
 };
 
 ProductCarousel.propTypes = {
