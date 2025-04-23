@@ -2,16 +2,29 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "../styles/Header.css";
 import { FaBars, FaTimes } from 'react-icons/fa';
+import LoginModal from './LoginModal';
 
 const Header = () => {
     const [menuOpen, setMenuOpen] = useState(false);
+    const [loginModalOpen, setLoginModalOpen] = useState(false);
     
     const toggleMenu = () => {
         setMenuOpen(!menuOpen);
     };
 
+    const openLoginModal = (e) => {
+        e.preventDefault();
+        setLoginModalOpen(true);
+        setMenuOpen(false); // Close the mobile menu if open
+    };
+
+    const closeLoginModal = () => {
+        setLoginModalOpen(false);
+    };
+
     return (
-        <header className="header">
+        <>
+            <header className="header">
             <div className="header-container">
                 {/* Large logo on the left */}
                 <div className="logo-container">
@@ -32,12 +45,16 @@ const Header = () => {
                         <li><Link to="/cart" onClick={() => setMenuOpen(false)}>Coșul meu</Link></li>
                         <li><Link to="/contact" onClick={() => setMenuOpen(false)}>Contact</Link></li>
                         <li><Link to="/acount" onClick={() => setMenuOpen(false)}>Contul meu</Link></li>
-                        <li><Link to="/login" onClick={() => setMenuOpen(false)}>Inra in cont</Link></li>
+                        <li><a href="#" onClick={openLoginModal}>Intra in cont</a></li>
                         <li><Link to="/register-company" onClick={() => setMenuOpen(false)}>Creaza-ti cont</Link></li>
                     </ul>
                 </nav>
             </div>
         </header>
+
+        {/* Login Modal */}
+        <LoginModal isOpen={loginModalOpen} onClose={closeLoginModal} />
+        </>
     )
 }
 export default Header;
