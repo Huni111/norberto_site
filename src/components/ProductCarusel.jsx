@@ -20,26 +20,20 @@ const ProductCard = ({ product }) => {
   // Generate star rating
   const renderStars = (rating) => {
     const fullStars = Math.floor(rating);
-    const hasHalfStar = rating % 1 >= 0.5;
     const stars = [];
     
     // Add full stars
     for (let i = 0; i < fullStars; i++) {
-      stars.push(<span key={`full-${i}`} className="star full">★</span>);
-    }
-    
-    // Add half star if needed
-    if (hasHalfStar) {
-      stars.push(<span key="half" className="star half">★</span>);
+      stars.push(<span key={`full-${i}`} className="star">★</span>);
     }
     
     // Add empty stars
-    const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
+    const emptyStars = 5 - fullStars;
     for (let i = 0; i < emptyStars; i++) {
       stars.push(<span key={`empty-${i}`} className="star empty">☆</span>);
     }
     
-    return <div className="product-rating">{stars}</div>;
+    return stars;
   };
 
   return (
@@ -51,12 +45,15 @@ const ProductCard = ({ product }) => {
             <span className="discount-badge">-{discount}%</span>
           )}
         </div>
-        <div className="product-info">
-          <h3>{name}</h3>
+        <div className="product-details">
+          <h3 className="product-title">{name}</h3>
           {category && <div className="product-category">{category}</div>}
           
           {/* Star rating */}
-          {renderStars(rating)}
+          <div className="product-rating">
+            {renderStars(rating)}
+            <span className="rating-value">{rating.toFixed(1)}</span>
+          </div>
           
           <div className="product-price">
             {discount > 0 ? (
@@ -67,13 +64,18 @@ const ProductCard = ({ product }) => {
                 </span>
               </>
             ) : (
-              <span>{price.toFixed(2)} {currency}</span>
+              <span className="regular-price">{price.toFixed(2)} {currency}</span>
             )}
           </div>
+          
           {description && (
             <p className="product-description">{description}</p>
           )}
-          <button className="add-to-cart-btn">Adaugă în coș</button>
+          
+          <div className="product-actions">
+            <button className="add-to-cart-button">Adaugă în coș</button>
+            <button className="view-details-btn">Detalii</button>
+          </div>
         </div>
       </div>
     </div>

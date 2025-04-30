@@ -2,7 +2,8 @@ import React, {useEffect} from "react";
 import HeroSection from './Hero'
 import Products from '../../image/products.json'
 import ProductCarousel from './ProductCarusel'
-import '../styles/Home.css'; // Import the CSS file
+import '../styles/Home.css'; // Import the Home CSS file
+import '../styles/ProductCard.css'; // Import the ProductCard CSS file
 
 
 const Home = () => {
