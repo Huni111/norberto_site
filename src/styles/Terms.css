@@ -1,0 +1,107 @@
+.terms-container {
+  max-width: 850px;
+  margin: 2rem auto;
+  padding: 3rem;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  line-height: 1.8;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.terms-content {
+  background-color: #fff;
+  padding: 3rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+  text-align: center; /* Center all content by default */
+}
+
+.terms-title {
+  font-size: 2.2rem;
+  color: #222;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.terms-date {
+  text-align: center;
+  color: #555;
+  margin-bottom: 2.5rem;
+  font-style: italic;
+}
+
+.terms-intro {
+  text-align: center;
+  margin: 0 auto 2.5rem;
+  max-width: 90%;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.terms-divider {
+  border: none;
+  border-top: 1px solid #eaeaea;
+  margin: 2.5rem auto;
+  width: 70%;
+}
+
+.terms-section-title {
+  color: #222;
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+/* Make the text more readable with better spacing */
+.terms-container p {
+  margin-bottom: 1.5rem;
+  line-height: 1.8;
+  color: #333;
+  text-align: left; /* Paragraphs should be left-aligned for better readability */
+  max-width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.terms-contact {
+  margin-top: 2.5rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+.terms-footer {
+  margin-top: 1.5rem;
+  line-height: 2;
+  text-align: center;
+  font-size: 1.05rem;
+}
+
+/* Add some responsiveness */
+@media (max-width: 768px) {
+  .terms-container {
+    padding: 1.5rem;
+    margin: 1rem auto;
+  }
+  
+  .terms-content {
+    padding: 1.5rem;
+  }
+  
+  .terms-title {
+    font-size: 1.8rem;
+  }
+  
+  .terms-intro,
+  .terms-container p {
+    max-width: 100%;
+  }
+  
+  .terms-divider {
+    width: 85%;
+  }
+}

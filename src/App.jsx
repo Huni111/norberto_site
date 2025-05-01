@@ -15,6 +15,7 @@ const Servicii = lazy(() => import('./components/Servicii'))
 const Cont = lazy(() => import('./components/Cont'))
 const Contact = lazy(() => import('./components/Contact'))
 const CompanyRegistrationForm = lazy(() => import('./components/CompanyRegistrationForm'))
+const Terms = lazy(() => import('./components/Terms'))
 
 
 
@@ -56,6 +57,11 @@ const router = createBrowserRouter([
             { path: '/register-company', element: 
                 <Suspense fallback={<div>Loading...</div>}>
                     <CompanyRegistrationForm />
+                </Suspense> 
+            },
+            { path: '/terms', element: 
+                <Suspense fallback={<div>Loading...</div>}>
+                    <Terms />
                 </Suspense> 
             },
             { 
