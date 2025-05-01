@@ -1,5 +1,5 @@
 import React from 'react';
-import './PrivacyPolicy.css';
+import '../styles/PrivacyPolicy.css'; // Updated path to use the styles directory
 
 const PrivacyPolicy = () => {
   return (
