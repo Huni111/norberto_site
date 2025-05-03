@@ -1,7 +1,7 @@
 import React from 'react';
 import '../styles/PrivacyPolicy.css'; // Updated path to use the styles directory
 
-const PrivacyPolicy = () => {
+const Privacy = () => {
   return (
     <div className="privacy-policy-container">
       <div className="privacy-policy-content">
@@ -126,4 +126,4 @@ const PrivacyPolicy = () => {
   );
 };
 
-export default PrivacyPolicy;
+export default Privacy;

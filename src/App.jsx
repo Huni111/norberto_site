@@ -16,7 +16,7 @@ const Cont = lazy(() => import('./components/Cont'))
 const Contact = lazy(() => import('./components/Contact'))
 const CompanyRegistrationForm = lazy(() => import('./components/CompanyRegistrationForm'))
 const Terms = lazy(() => import('./components/Terms'))
-const Policy = lazy(() => import('./components/PrivacyPolicy'))
+const Privacy = lazy(() => import('./components/Privacy'))
 
 
 const router = createBrowserRouter([
@@ -64,9 +64,9 @@ const router = createBrowserRouter([
                     <Terms />
                 </Suspense> 
             },
-            { path: '/privacy-policy', element: 
+            { path: '/privacypolicy', element: 
                 <Suspense fallback={<div>Loading...</div>}>
-                    <Policy />
+                    <Privacy />
                 </Suspense> 
             },
             { 

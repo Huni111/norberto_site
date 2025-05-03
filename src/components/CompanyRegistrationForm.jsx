@@ -495,7 +495,7 @@ const CompanyRegistrationForm = () => {
               className={errors.gdprAccepted ? "error" : ""}
             />
             <label htmlFor="gdprAccepted">
-              Sunt de acord cu <a href="/privacy-policy" target="_blank" rel="noopener noreferrer">prelucrarea datelor personale (GDPR)</a> *
+              Sunt de acord cu <a href="/privacypolicy" target="_blank" rel="noopener noreferrer">prelucrarea datelor personale (GDPR)</a> *
             </label>
             {errors.gdprAccepted && <div className="error-message">{errors.gdprAccepted}</div>}
           </div>
