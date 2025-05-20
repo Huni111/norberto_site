@@ -22,13 +22,10 @@ const ProductDetail = () => {
         // In a real app, you would use an API endpoint
         const response = await fetch('/image/products.json');
         const data = await response.json();
-        const foundProduct = data.products.find(p => p.id.toString() === productId);
         
-        if (foundProduct) {
-          setProduct(foundProduct);
-        } else {
-          setError('Produsul nu a fost găsit');
-        }
+        // For visualization purposes, always use the first product
+        const firstProduct = data.products[0];
+        setProduct(firstProduct);
         
         setLoading(false);
       } catch (err) {
@@ -39,7 +36,7 @@ const ProductDetail = () => {
     };
     
     fetchProduct();
-  }, [productId]);
+  }, []);  // Removed productId dependency since we're always showing the first product
 
   const handleQuantityChange = (e) => {
     const value = parseInt(e.target.value);

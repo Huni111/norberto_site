@@ -18,6 +18,7 @@ const CompanyRegistrationForm = lazy(() => import('./components/CompanyRegistrat
 const Terms = lazy(() => import('./components/Terms'))
 const Privacy = lazy(() => import('./components/Privacy'))
 const Cart =lazy (() => import('./components/Cart') )
+const ProductDetail =lazy (() => import('./components/ProductDetail') )
 
 
 const router = createBrowserRouter([
@@ -73,6 +74,11 @@ const router = createBrowserRouter([
             { path: '/cart', element: 
                 <Suspense fallback={<div>Loading...</div>}>
                     <Cart />
+                </Suspense> 
+            },
+            { path: '/produs', element: 
+                <Suspense fallback={<div>Loading...</div>}>
+                    <ProductDetail />
                 </Suspense> 
             },
             { 
