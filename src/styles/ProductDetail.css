@@ -2,6 +2,7 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
+  padding-top: 60px; /* Added padding-top to push content down below the logo */
 }
 
 .product-detail-breadcrumb {

@@ -10,7 +10,7 @@ import { lazy } from 'react';
 
 const Home = lazy(() => import('./components/Home'))
 const Despre = lazy(() => import('./components/Despre'))
-const Produse = lazy(() => import('./components/Produse'))
+const Products = lazy(() => import('./components/Produse'))
 const Servicii = lazy(() => import('./components/Servicii'))
 const Cont = lazy(() => import('./components/Cont'))
 const Contact = lazy(() => import('./components/Contact'))
@@ -38,7 +38,7 @@ const router = createBrowserRouter([
             },
             { path: 'products', element: 
                 <Suspense fallback={<div>Loading...</div>}>
-                    <Produse />
+                    <Products />
                 </Suspense> 
             },
             { path: 'services', element: 
