@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import '../styles/Produse.css';
+import '../styles/CardStyles.css';
 
-const Produse = () => {
+const Products = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -191,4 +191,4 @@ const Produse = () => {
   );
 };
 
-export default Produse;
+export default Products;
